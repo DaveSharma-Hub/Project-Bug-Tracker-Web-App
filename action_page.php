@@ -1,16 +1,11 @@
 <?php
     $email = $_POST['uname'];
     $password = $_POST['psw'];
-    // echo $email;
-//     if (!function_exists('mysqli_init') && !extension_loaded('mysqli')) {  
-//         echo 'We don\'t have mysqli!!!';  
-//  } else {  
-//      echo 'mysqli is installed';
-//  }
-    $conn= new mysqli("localhost","dave(2)","ensf409","tracker");
-    // $conn = new PDO("mysql:host=localhost;dbname=tracker", "dave(2)", "ensf409");
-    // // set the PDO error mode to exception
-    // $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+    $username="";
+    $password="";
+    $conn= new mysqli("localhost",$username,$password,"tracker");
+   
 
     if($conn->connect_error){
         die("Failed to connect: ".$con->connect_error);
@@ -24,30 +19,6 @@
             if($data['pass']===hash('sha256',$password)){
                 echo "<h2>Login Successful</h2>";
 
-                // where are we posting to?
-                // $url = 'http://localhost:3000/Users/Daves/Documents/Practice/tracker/main.php';
-
-                // // what post fields?
-                // $fields = array(
-                // 'field1' => $email,
-                // );
-
-                // // build the urlencoded data
-                // $postvars = http_build_query($fields);
-
-                // // open connection
-                // $ch = curl_init();
-
-                // // set the url, number of POST vars, POST data
-                // curl_setopt($ch, CURLOPT_URL, $url);
-                // curl_setopt($ch, CURLOPT_POST, count($fields));
-                // curl_setopt($ch, CURLOPT_POSTFIELDS, $postvars);
-
-                // // execute post
-                // $result = curl_exec($ch);
-
-                // // close connection
-                // curl_close($ch);
                 session_start();
                 $_SESSION['formdata'] = $email; //or whatever
 
