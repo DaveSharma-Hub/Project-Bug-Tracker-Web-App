@@ -164,8 +164,8 @@ h3{
 <div class="w3-sidebar w3-bar-block w3-card w3-animate-left" style="display:none" id="mySidebar">
     <button class="w3-bar-item w3-button w3-large"
     onclick="w3_close()">Close &times;</button>
-    <a href="http://localhost:3000/Users/Daves/Documents/Practice/tracker/editInfo.php" class="w3-bar-item w3-button" id="edit">Edit Information</a>
-    <a href="http://localhost:3000/Users/Daves/Documents/Practice/tracker/notifications.php" class="w3-bar-item w3-button" id="notification">Notifications
+    <a href="editInfo.php" class="w3-bar-item w3-button" id="edit">Edit Information</a>
+    <a href="notifications.php" class="w3-bar-item w3-button" id="notification">Notifications
     <?php
      $stmt = $connection->prepare("select * from login where email = ?"); //prevent sql injection
      $stmt->bind_param("s",$email);
@@ -184,9 +184,9 @@ h3{
      }
     ?>
     </a>
-    <a href="http://localhost:3000/Users/Daves/Documents/Practice/tracker/messages.php" class="w3-bar-item w3-button" id="dm">Direct Message</a>
-    <a href="http://localhost:3000/Users/Daves/Documents/Practice/tracker/projects.php" class="w3-bar-item w3-button"id="project">Projects</a>
-    <a href="http://localhost:3000/Users/Daves/Documents/Practice/tracker/bug.php" class="w3-bar-item w3-button" id="bugs">Bugs</a>
+    <a href="messages.php" class="w3-bar-item w3-button" id="dm">Direct Message</a>
+    <a href="projects.php" class="w3-bar-item w3-button"id="project">Projects</a>
+    <a href="bug.php" class="w3-bar-item w3-button" id="bugs">Bugs</a>
     <a href="index.html" class="w3-bar-item w3-button" id="logout">Logout</a>
 
   </div>
@@ -273,16 +273,13 @@ h3{
             echo "</div>";
         } 
     ?>
-  <!-- <p>In this example, the sidebar is hidden (style="display:none")</p>
-  <p>It is shown when you click on the menu icon in the top left corner.</p>
-  <p>When it is opened, it shifts the page content to the right.</p>
-  <p>We use JavaScript to add a 25% left margin to the div element with id="main" when this happens. The value "25%" matches the width of the sidebar.</p> -->
+  
   </div>
   <?php
     $holder =$_SESSION['formdata'];
     $_SESSION['formdata'] = $holder;
   ?>
-  <form action="http://localhost:3000/Users/Daves/Documents/Practice/tracker/addNotes.php"  method="post" style="border:1px solid #ccc">
+  <form action="addNotes.php"  method="post" style="border:1px solid #ccc">
         <div class="container">
           <h1>Add Notes</h1>
           <hr>
@@ -298,7 +295,7 @@ h3{
         </div>
       </form>
 
-      <form action="http://localhost:3000/Users/Daves/Documents/Practice/tracker/deleteNotes.php"  method="post" style="border:1px solid #ccc">
+      <form action="deleteNotes.php"  method="post" style="border:1px solid #ccc">
         <div class="container2">
           <h1>Delete All 
             Notes</h1>
