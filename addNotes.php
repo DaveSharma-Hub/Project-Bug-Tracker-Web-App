@@ -2,16 +2,10 @@
     session_start();
     $email =    $_SESSION['formdata'];
     $note = $_POST['notes'];
-    // echo $email;
-//     if (!function_exists('mysqli_init') && !extension_loaded('mysqli')) {  
-//         echo 'We don\'t have mysqli!!!';  
-//  } else {  
-//      echo 'mysqli is installed';
-//  }
-    $conn= new mysqli("localhost","dave(2)","ensf409","tracker");
-    // $conn = new PDO("mysql:host=localhost;dbname=tracker", "dave(2)", "ensf409");
-    // // set the PDO error mode to exception
-    // $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+  
+    $username="";
+    $password="";
+    $conn= new mysqli("localhost",$username,$password,"tracker");
 
     if($conn->connect_error){
         die("Failed to connect: ".$con->connect_error);
