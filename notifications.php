@@ -139,23 +139,18 @@ table{
 }
 </style>
 <body>
-    <!-- <h1>HELLO TESTING</h1>
-    <button type="button" class="logout" onclick="window.location.href='index.html';">Logout</button> -->
-      
-<!-- <div id="comments">
     
-</div> -->
 
 <div class="w3-sidebar w3-bar-block w3-card w3-animate-left" style="display:none" id="mySidebar">
     <button class="w3-bar-item w3-button w3-large"
     onclick="w3_close()">Close &times;</button>
-    <a href="http://localhost:3000/Users/Daves/Documents/Practice/tracker/editInfo.php" class="w3-bar-item w3-button">Edit Information
+    <a href="editInfo.php" class="w3-bar-item w3-button">Edit Information
         </a>
         <a href="#" class="w3-bar-item w3-button">Notifications</a>
-        <a href="http://localhost:3000/Users/Daves/Documents/Practice/tracker/messages.php" class="w3-bar-item w3-button">Direct Message</a>
-        <a href="http://localhost:3000/Users/Daves/Documents/Practice/tracker/projects.php" class="w3-bar-item w3-button">Projects</a>
-        <a href="http://localhost:3000/Users/Daves/Documents/Practice/tracker/bug.php" class="w3-bar-item w3-button">Bugs</a>
-    <a href="http://localhost:3000/Users/Daves/Documents/Practice/tracker/main.php" class="w3-bar-item w3-button">Main Page</a>
+        <a href="messages.php" class="w3-bar-item w3-button">Direct Message</a>
+        <a href="projects.php" class="w3-bar-item w3-button">Projects</a>
+        <a href="bug.php" class="w3-bar-item w3-button">Bugs</a>
+    <a href="main.php" class="w3-bar-item w3-button">Main Page</a>
     <a href="index.html" class="w3-bar-item w3-button">Logout</a>
 
 </div>
@@ -191,16 +186,9 @@ table{
             $stmt->execute();
             $stmt_result = $stmt->get_result();
                 
-            // echo "<table id='myTable' class='display' style='width:100%' style='margin-top:10px; margin-left:10px;'><tr>";
-            // echo "<th>Project #</th><th>Project Description</th><th>Tools</th></tr><tr>";
 
                 while($information = ($stmt_result->fetch_array())){
-                    // echo "<h2>Project ". $num.": ";
-                    // echo $data['projectDesc']." ";
-                    // echo " Tools : ";
-                    // echo $data['tools'];
-                    // echo "<h2>";
-                    // echo "<br>";
+                   
 
                     $stmt2 = $connection->prepare("select * from login where loginID = ?"); //prevent sql injection
                     $stmt2->bind_param("i",$information['fromID']);
@@ -218,29 +206,7 @@ table{
               }
             } 
             echo "</table>";
-            // if($stmt_result->num_rows > 0){
-            //     $data = $stmt_result->fetch_assoc();
-            //     for($x=0;$x<$stmt_result->num_rows;$x++){
-            //         $num =$x+1;
-            //         echo "<h2>Project ". $num.": ";
-            //         echo $data['projectDesc']." ";
-            //         echo " Tools : ";
-            //         echo $data['tools'];
-            //         echo "<h2>";
-            //         echo "<br>";
-            //     }
-            // }
-        
-    
 
-
-        // echo "<h1>Projects: ";
-        // echo $email;
-        // echo "</h1>";
-
-        // session_start();
-        // $email =$_SESSION['formdata'];
-        // session_abort();
     ?>
     </div>
   </div>
@@ -257,22 +223,7 @@ table{
     ?>
 </div>
 
-    <!-- <div id="content">
-        <form method="POST" 
-                action="http://localhost:3000/Users/Daves/Documents/Practice/tracker/addPhoto.php" 
-                enctype="multipart/form-data">
-            <input type="file" 
-                    name="uploadfile" 
-                    value="" />
-
-            <div>
-                <button type="submit"
-                        name="upload">
-                    UPLOAD
-                </button>
-            </div>
-        </form>
-    </div> -->
+  
   
   <script>
   function w3_open() {
