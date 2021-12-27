@@ -8,17 +8,15 @@
     if($passworR!=$password){
         echo "<h1>Passwords Dont Match</h1>";
 
-        //sleep for 3 seconds
        
         session_start();
         $_SESSION['formdata'] = $email; //or whatever
         header('Location: editInfo.php');
     }else{
 
-    $conn= new mysqli("localhost","dave(2)","ensf409","tracker");
-    // $conn = new PDO("mysql:host=localhost;dbname=tracker", "dave(2)", "ensf409");
-    // // set the PDO error mode to exception
-    // $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+   $username="";
+    $password="";
+    $conn= new mysqli("localhost",$username,$password,"tracker");
 
     if($conn->connect_error){
         die("Failed to connect: ".$con->connect_error);
