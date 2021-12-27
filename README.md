@@ -1,4 +1,4 @@
-# Project-Tracker-Web-App
+# Project Tracker Web App(Front and Back End)
 Online Web Application that connects to a backend server to store personal information and has functionality in messaging, notifications, projects, and bugs. This project involves front-end and back-end design in addition to using MVC(Model-View-Controller) design pattern.
 
 Code uses PHP, JS, HTML, CSS and SQL for the full front(HTML,CSS,JS) and back(PHP,SQL) end of the system. The system also stores the passwords as a hash using SHA-256 in the database and prevents SQL Injection via prepared statements.
