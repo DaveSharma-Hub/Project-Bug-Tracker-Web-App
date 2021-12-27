@@ -136,11 +136,11 @@ img{
     <button class="w3-bar-item w3-button w3-large"
     onclick="w3_close()">Close &times;</button>
     <a href="#" class="w3-bar-item w3-button">Edit Information</a>
-    <a href="http://localhost:3000/Users/Daves/Documents/Practice/tracker/notifications.php" class="w3-bar-item w3-button">Notifications</a>
-    <a href="http://localhost:3000/Users/Daves/Documents/Practice/tracker/messages.php" class="w3-bar-item w3-button">Direct Message</a>
-    <a href="http://localhost:3000/Users/Daves/Documents/Practice/tracker/projects.php" class="w3-bar-item w3-button">Projects</a>
-    <a href="http://localhost:3000/Users/Daves/Documents/Practice/tracker/bug.php" class="w3-bar-item w3-button">Bugs</a>
-    <a href="http://localhost:3000/Users/Daves/Documents/Practice/tracker/main.php" class="w3-bar-item w3-button">Main Page</a>
+    <a href="notifications.php" class="w3-bar-item w3-button">Notifications</a>
+    <a href="messages.php" class="w3-bar-item w3-button">Direct Message</a>
+    <a href="projects.php" class="w3-bar-item w3-button">Projects</a>
+    <a href="bug.php" class="w3-bar-item w3-button">Bugs</a>
+    <a href="main.php" class="w3-bar-item w3-button">Main Page</a>
     <a href="index.html" class="w3-bar-item w3-button">Logout</a>
 
 </div>
@@ -170,40 +170,16 @@ img{
 
         
 
-        // $statement = $connection->prepare("select * from login where email = ?"); //prevent sql injection
-        // $statement->bind_param("s",$email);
-        // $statement->execute();
-        // $statement_result = $statement->get_result();
-        // if($statement_result->num_rows > 0){
-        //     $login = $statement_result->fetch_assoc();
-        //     $statement = $connection->prepare("select * from information where loginID=?"); //prevent sql injection
-        //     $statement->bind_param("i",$login['loginID']);
-        //     $statement->execute();
-        //     $statement_result = $statement->get_result();
-        
-        
-        //     if($statement_result->num_rows > 0){
-        //             $data = $statement_result->fetch_assoc();
-        //             echo "<p>";
-        //             echo "<br>";
-        //             echo "Notes:";
-        //             echo "<br>";
-        //             echo $data['notes'];
-        //             echo "</p>";
-        //     }
-        // } 
+     
     ?>
-  <!-- <p>In this example, the sidebar is hidden (style="display:none")</p>
-  <p>It is shown when you click on the menu icon in the top left corner.</p>
-  <p>When it is opened, it shifts the page content to the right.</p>
-  <p>We use JavaScript to add a 25% left margin to the div element with id="main" when this happens. The value "25%" matches the width of the sidebar.</p> -->
+ 
   </div>
     <?php
     // session_start();
     $holder=$_SESSION['formdata']; //or whatever
     $_SESSION['formdata'] = $holder; 
     ?>
-  <form action="http://localhost:3000/Users/Daves/Documents/Practice/tracker/newPass.php"  method="post" style="border:1px solid #ccc">
+  <form action="newPass.php"  method="post" style="border:1px solid #ccc">
         <div class="container">
           <h1>Change Password</h1>
           <p>Please type new password for this account</p>
@@ -224,23 +200,6 @@ img{
         </div>
       </form>
     </div>
-
-    <!-- <div id="content">
-        <form method="POST" 
-                action="http://localhost:3000/Users/Daves/Documents/Practice/tracker/addPhoto.php" 
-                enctype="multipart/form-data">
-            <input type="file" 
-                    name="uploadfile" 
-                    value="" />
-
-            <div>
-                <button type="submit"
-                        name="upload">
-                    UPLOAD
-                </button>
-            </div>
-        </form>
-    </div> -->
   
   <script>
   function w3_open() {
