@@ -149,13 +149,13 @@ table{
 <div class="w3-sidebar w3-bar-block w3-card w3-animate-left" style="display:none" id="mySidebar">
     <button class="w3-bar-item w3-button w3-large"
     onclick="w3_close()">Close &times;</button>
-    <a href="http://localhost:3000/Users/Daves/Documents/Practice/tracker/editInfo.php" class="w3-bar-item w3-button">Edit Information
+    <a href="editInfo.php" class="w3-bar-item w3-button">Edit Information
         </a>
-        <a href="http://localhost:3000/Users/Daves/Documents/Practice/tracker/notifications.php" class="w3-bar-item w3-button">Notifications</a>
-        <a href="http://localhost:3000/Users/Daves/Documents/Practice/tracker/messages.php" class="w3-bar-item w3-button">Direct Message</a>
-        <a href="http://localhost:3000/Users/Daves/Documents/Practice/tracker/projects.php" class="w3-bar-item w3-button">Projects</a>
-        <a href="http://localhost:3000/Users/Daves/Documents/Practice/tracker/bug.php" class="w3-bar-item w3-button">Bugs</a>
-    <a href="http://localhost:3000/Users/Daves/Documents/Practice/tracker/main.php" class="w3-bar-item w3-button">Main Page</a>
+        <a href="notifications.php" class="w3-bar-item w3-button">Notifications</a>
+        <a href="messages.php" class="w3-bar-item w3-button">Direct Message</a>
+        <a href="projects.php" class="w3-bar-item w3-button">Projects</a>
+        <a href="bug.php" class="w3-bar-item w3-button">Bugs</a>
+    <a href="main.php" class="w3-bar-item w3-button">Main Page</a>
     <a href="index.html" class="w3-bar-item w3-button">Logout</a>
 
 </div>
@@ -183,7 +183,7 @@ table{
     $_SESSION['formdata'] = $email; 
     ?>
 
-  <form action="http://localhost:3000/Users/Daves/Documents/Practice/tracker/sendMessage.php"  method="post" style="border:1px solid #ccc">
+  <form action="sendMessage.php"  method="post" style="border:1px solid #ccc">
         <div class="container">
           <h1>Direct Message</h1>
           <p></p>
@@ -192,22 +192,15 @@ table{
           <label for="recieve">Recipient:</label>
             <select name="recieve">
                 <?php
-                    $stmt = $connection->prepare("select * from login;"); //prevent sql injection                    $stmt->execute();
+                    $stmt = $connection->prepare("select * from login;"); //prevent sql injection
                     $stmt->execute();
                     $stmt_result = $stmt->get_result();
                     while($data = ($stmt_result->fetch_array())){
                         echo "<option value=".$data['email'].">".$data['email']."</option>";
                     }
                         
-                        // $stmt = $connection->prepare("select * from projects where loginID = ?"); //prevent sql injection
-                        // $stmt->bind_param("i",$login);
-                        // $stmt->execute();
-                        // $stmt_result = $stmt->get_result();
                 ?>
-                <!-- <option value="volvo">Volvo</option>
-                <option value="saab">Saab</option>
-                <option value="opel">Opel</option>
-                <option value="audi">Audi</option> -->
+               
             </select>
 
           <label for="name" ><b><br><br>Message Subject: </b></label>
@@ -223,22 +216,6 @@ table{
       </form>
     </div>
 
-    <!-- <div id="content">
-        <form method="POST" 
-                action="http://localhost:3000/Users/Daves/Documents/Practice/tracker/addPhoto.php" 
-                enctype="multipart/form-data">
-            <input type="file" 
-                    name="uploadfile" 
-                    value="" />
-
-            <div>
-                <button type="submit"
-                        name="upload">
-                    UPLOAD
-                </button>
-            </div>
-        </form>
-    </div> -->
   
   <script>
   function w3_open() {
