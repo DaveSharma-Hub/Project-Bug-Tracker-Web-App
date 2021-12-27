@@ -4,11 +4,9 @@
     $id = $_POST['id'];
     $desc = $_POST['desc'];
 
-
-    // echo $email;
-    // echo $id;
-
-    $conn= new mysqli("localhost","dave(2)","ensf409","tracker");
+    $username="";
+    $password="";
+    $conn= new mysqli("localhost",$username,$password,"tracker");
     
 
     if($conn->connect_error){
