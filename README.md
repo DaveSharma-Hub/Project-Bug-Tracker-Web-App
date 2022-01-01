@@ -1,7 +1,7 @@
 # Project Tracker Web App(Front and Back End)
-Online Web Application that connects to a backend server to store and track project information for any user that signs up. It also stores some personal information and has functionality in messaging, notifications, projects, and bug tracking. This project involves front-end and back-end design in addition to using MVC(Model-View-Controller) design pattern.
+Online Web Application that connects to a backend server to store and track project information for any user that signs up. It also stores some personal information and has functionality in messaging, notifications, projects, and bug tracking. This project involves front-end and back-end design in addition to using the MVC(Model-View-Controller) design pattern.
 
-Code uses PHP, JS, HTML, CSS and SQL for the full front(HTML,CSS,JS) and back(PHP,SQL) end of the system. Some security designs have been considered such as storing the passwords as a hash using SHA-256 in the database and prevents SQL Injection via prepared statements.
+Code uses PHP, JS, HTML, CSS and SQL for the full front(HTML,CSS,JS) and back(PHP,SQL) end of the system. Some security designs have been considered such as storing the passwords as a hash using SHA-256 in the database and preventing SQL Injection via prepared statements.
 
 Sample Screenshots:
 ![loginJPG](https://user-images.githubusercontent.com/81478885/147493469-81c3597d-1132-4ab4-96f5-2eb9ac520ccc.JPG)
